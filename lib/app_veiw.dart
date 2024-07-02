@@ -1,7 +1,6 @@
 import 'package:delivery_app/pages/categories.dart';
-import 'package:delivery_app/pages/mainscreen.dart';
+import 'package:delivery_app/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 class MyAppView extends StatefulWidget {
   const MyAppView({super.key});
 
@@ -25,7 +24,8 @@ class _MyAppViewState extends State<MyAppView> {
         outline: Colors.grey.shade400,
       ),
       ),
-      home: const CategoriesScreen()
+      onGenerateRoute: Routes.onGenerate,
+      initialRoute: '/Category',
     );
   }
 }
