@@ -34,7 +34,8 @@ class _SearchPageState extends State<SearchPage> {
               height: 50,
               margin: EdgeInsets.only(left: 20, right: 20),
               decoration: BoxDecoration(
-                color: Colors.white,border: Border.all(color: Colors.grey.shade400),
+                color: Colors.white,
+                border: Border.all(color: Colors.grey.shade400),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey.withOpacity(0.5),

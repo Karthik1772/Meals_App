@@ -8,12 +8,13 @@ class Routes {
     switch (settings.name) {
       case '/homescreen':
         return MaterialPageRoute(builder: (context) => const HomeScreen());
-        case '/location':
+      case '/location':
         return MaterialPageRoute(builder: (context) => const Location());
-        case '/search':
+      case '/search':
         return MaterialPageRoute(builder: (context) => const SearchPage());
       default:
-        return MaterialPageRoute(builder: (context) => const HomeScreen(),
+        return MaterialPageRoute(
+          builder: (context) => const HomeScreen(),
         );
     }
   }
