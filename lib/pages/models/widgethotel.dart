@@ -31,6 +31,8 @@ class _HotelState extends State<Hotel> {
           height: 300,
           width: double.infinity,
           child: Card(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             surfaceTintColor: Colors.transparent,
             elevation: 10,
             child: Column(
@@ -46,8 +48,8 @@ class _HotelState extends State<Hotel> {
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(20),
-                          topRight: Radius.circular(20))),
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(10))),
                 ),
                 Container(
                   width: double.infinity,
@@ -60,7 +62,8 @@ class _HotelState extends State<Hotel> {
                             alignment: Alignment.topLeft,
                             child: Text(
                               widget.hname,
-                              style: GoogleFonts.varelaRound(fontSize: 18,fontWeight: FontWeight.w500),
+                              style: GoogleFonts.varelaRound(
+                                  fontSize: 18, fontWeight: FontWeight.w500),
                             )),
                         Align(
                             alignment: Alignment.topLeft,
@@ -83,7 +86,7 @@ class _HotelState extends State<Hotel> {
                                         fontSize: 12, color: Colors.green))),
                             Align(
                                 alignment: Alignment.topLeft,
-                                child: Text(widget.open,
+                                child: Text(widget.open + "AM",
                                     style: TextStyle(
                                         fontSize: 12, color: Colors.black))),
                           ],
@@ -97,7 +100,7 @@ class _HotelState extends State<Hotel> {
                                         fontSize: 12, color: Colors.red))),
                             Align(
                                 alignment: Alignment.topLeft,
-                                child: Text(widget.close,
+                                child: Text(widget.close + "PM",
                                     style: TextStyle(
                                         fontSize: 12, color: Colors.black))),
                           ],
