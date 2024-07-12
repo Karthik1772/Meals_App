@@ -60,7 +60,7 @@ class _HotelState extends State<Hotel> {
                             alignment: Alignment.topLeft,
                             child: Text(
                               widget.hname,
-                              style: GoogleFonts.varelaRound(fontSize: 20),
+                              style: GoogleFonts.varelaRound(fontSize: 18,fontWeight: FontWeight.w500),
                             )),
                         Align(
                             alignment: Alignment.topLeft,
