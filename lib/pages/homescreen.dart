@@ -1,8 +1,11 @@
+import 'package:delivery_app/pages/hotel_list.dart';
 import 'package:delivery_app/pages/models/widgetcategory.dart';
-import 'package:delivery_app/pages/models/widgethotel.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+void main() {
+  runApp(HomeScreen());
+}
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -12,49 +15,68 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        key: _scaffoldKey,
         backgroundColor: Colors.white,
+        appBar: AppBar(
+          leading: Icon(
+            Icons.location_on,
+            size: 30,
+          ),
+          title: Container(
+            child: Column(
+              children: [
+                Row(
+                  //1st row start
+                  children: [
+                    Column(
+                      //sub column 1 start
+                      children: [
+                        Row(
+                          //sub row1 start
+                          children: [
+                            GestureDetector(
+                              child: Text(
+                                "Home",
+                                style: TextStyle(
+                                    fontSize: 25, fontWeight: FontWeight.bold),
+                              ),
+                              onTap: () =>
+                                  Navigator.pushNamed(context, '/location'),
+                            )
+                          ],
+                        ), //sub row1 ends
+                        Text(
+                          "Location",
+                          style: TextStyle(
+                              color: Colors.grey.shade700, fontSize: 15),
+                        )
+                      ],
+                    ), //sub column 1 ends
+                    //drawer should come
+                  ],
+                ), //1st row ends
+              ],
+            ),
+          ),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.menu),
+              onPressed: () {
+                _scaffoldKey.currentState!.openEndDrawer();
+              },
+            ),
+          ],
+        ),
         body: SingleChildScrollView(
           child: Column(
             //main column
             children: [
-              Row(
-                //1st row start
-                children: [
-                  Column(
-                    //sub column 1 start
-                    children: [
-                      Row(
-                        //sub row1 start
-                        children: [
-                          Icon(
-                            Icons.location_on,
-                            size: 30,
-                          ),
-                          GestureDetector(
-                            child: Text(
-                              "Home",
-                              style: TextStyle(
-                                  fontSize: 25, fontWeight: FontWeight.bold),
-                            ),
-                            onTap: () =>
-                                Navigator.pushNamed(context, '/location'),
-                          )
-                        ],
-                      ), //sub row1 ends
-                      Text(
-                        "Location",
-                        style: TextStyle(
-                            color: Colors.grey.shade700, fontSize: 15),
-                      )
-                    ],
-                  ), //sub column 1 ends
-                  //drawer should come
-                ],
-              ), //1st row ends
               Container(
                 width: double.infinity,
                 height: 50,
@@ -183,51 +205,41 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: GoogleFonts.varelaRound(
                         fontSize: 20, fontWeight: FontWeight.bold),
                   )),
-              Hotel(
-                  image:
-                      "https://woodlandhillsmagazine.com/wp-content/uploads/2023/02/burger-and-soda.jpg",
-                  hname: "Mehran Restaurant",
-                  category: "Food",
-                  loc: "Moodbidre",
-                  open: "11:30AM",
-                  close: "10:30PM"),
-              Hotel(
-                  image:
-                      "https://b.zmtcdn.com/data/pictures/chains/5/18657255/0cbaa8a31809d47072aadefbeb97d5f3_o2_featured_v2.jpg",
-                  hname: "Hotel Sri Sagar",
-                  category: "Food",
-                  loc: "Moodbidri",
-                  open: "07:00AM",
-                  close: "09:15PM"),
-              Hotel(
-                image:
-                    "https://b.zmtcdn.com/data/reviews_photos/e7d/7c6e153321162cf8cb93e03bc3cf3e7d_1605586100.jpg",
-                hname: "Royal Donne Biriyani",
-                category: "Food",
-                loc: "Moodbidre",
-                open: "10:30AM",
-                close: "10:30PM",
-              ),
-              Hotel(
-                image:
-                    "https://static.vecteezy.com/system/resources/thumbnails/029/865/638/small_2x/of-biryani-as-a-dish-in-a-high-end-restaurant-generative-ai-photo.jpg",
-                hname: "Arabian Treat Restaurant",
-                category: "Food",
-                loc: "Moodbidre",
-                open: "11:00AM",
-                close: "10:30PM",
-              ),
-              Hotel(
-                  image:
-                      "https://themeghalayan.com/wp-content/uploads/2022/06/WhatsApp-Image-2022-06-09-at-6.00.29-PM-974x553.jpeg",
-                  hname: "Charcoal's Restaurant",
-                  category: "Food",
-                  loc: "Moodbidre",
-                  open: "11:00AM",
-                  close: "10:30PM")
+              HotelList(),
             ],
           ),
         ), //main column ends
+        endDrawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
+                child: Text(
+                  'Drawer Header',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                  ),
+                ),
+              ),
+              ListTile(
+                leading: Icon(Icons.message),
+                title: Text('Messages'),
+              ),
+              ListTile(
+                leading: Icon(Icons.account_circle),
+                title: Text('Profile'),
+              ),
+              ListTile(
+                leading: Icon(Icons.settings),
+                title: Text('Settings'),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
