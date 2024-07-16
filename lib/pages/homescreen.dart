@@ -1,5 +1,6 @@
 import 'package:delivery_app/pages/categorylist.dart';
 import 'package:delivery_app/pages/hotel_list.dart';
+import 'package:delivery_app/pages/location.dart';
 import 'package:delivery_app/pages/models/widgetlistview.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -164,7 +165,11 @@ class _HomeScreenState extends State<HomeScreen> {
               const Divider(
                 color: Colors.grey,
               ),
-              CustomListTile(icon: Icons.location_on, title: 'Manage address'),
+              CustomListTile(
+                icon: Icons.location_on,
+                title: 'Manage address',
+                // onPressed: () => Navigator.pushNamed(context, '/location'),
+              ),
               const Divider(
                 color: Colors.grey,
               ),

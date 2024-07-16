@@ -22,6 +22,7 @@ class CustomListTile extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
+            SizedBox(width: 10),
             Icon(
               icon,
               color: Colors.yellow.shade700,
