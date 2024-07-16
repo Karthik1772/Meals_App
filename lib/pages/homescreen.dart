@@ -1,6 +1,5 @@
 import 'package:delivery_app/pages/categorylist.dart';
 import 'package:delivery_app/pages/hotel_list.dart';
-import 'package:delivery_app/pages/location.dart';
 import 'package:delivery_app/pages/models/widgetlistview.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
