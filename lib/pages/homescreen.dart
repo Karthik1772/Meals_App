@@ -1,5 +1,7 @@
 import 'package:delivery_app/pages/hotel_list.dart';
+import 'package:delivery_app/pages/models/listview.dart';
 import 'package:delivery_app/pages/models/widgetcategory.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -217,17 +219,25 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 80,
                 child: DrawerHeader(child: Text("data")),
               ),
-              ListTile(
-                leading: Icon(Icons.wallet),
-                title: Text('Wallet'),
-                // onTap: () => Navigator.pushNamed(context,"")
-              ),
+              CustomListTile(icon: Icons.wallet, title: 'Wallet'),
               const Divider(color: Colors.grey,),
-              ListTile(
-                leading: Icon(Icons.location_on),
-                title: Text('Manage address'),
-                // onTap: () => Navigator.pushNamed(context,"")
-              ),
+              CustomListTile(icon: Icons.location_on, title:'Manage address'),
+              const Divider(color: Colors.grey,),
+              CustomListTile(icon: Icons.info, title: 'About Homza Cart',),
+              const Divider(color: Colors.grey,),
+              CustomListTile(icon: Icons.favorite, title:'Favourites'),
+              const Divider(color: Colors.grey,),
+              CustomListTile(icon: CupertinoIcons.gift_fill, title: 'Refer and Earn',),
+              const Divider(color: Colors.grey,),
+              CustomListTile(icon: Icons.handshake_rounded, title:'Help - FAQ'),
+              const Divider(color: Colors.grey,),
+              CustomListTile(icon: Icons.contact_emergency, title: 'Terms of Service',),
+              const Divider(color: Colors.grey,),
+              CustomListTile(icon: Icons.shield, title:'Privacy Policy'),
+              const Divider(color: Colors.grey,),
+              CustomListTile(icon: Icons.content_paste, title: 'Refund Policy',),
+              const Divider(color: Colors.grey,),
+              CustomListTile(icon: CupertinoIcons.power, title:'Log Out'),
               const Divider(color: Colors.grey,),
             ],
           ),
