@@ -68,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           actions: [
             IconButton(
-              icon: Icon(Icons.menu),
+              icon: Icon(Icons.menu,size: 35,),
               onPressed: () {
                 _scaffoldKey.currentState!.openEndDrawer();
               },
