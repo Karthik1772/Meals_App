@@ -213,30 +213,22 @@ class _HomeScreenState extends State<HomeScreen> {
           child: ListView(
             padding: EdgeInsets.zero,
             children: <Widget>[
-              DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                ),
-                child: Text(
-                  'Drawer Header',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 24,
-                  ),
-                ),
+              Container(
+                height: 80,
+                child: DrawerHeader(child: Text("data")),
               ),
               ListTile(
-                leading: Icon(Icons.message),
-                title: Text('Messages'),
+                leading: Icon(Icons.wallet),
+                title: Text('Wallet'),
+                // onTap: () => Navigator.pushNamed(context,"")
               ),
+              const Divider(color: Colors.grey,),
               ListTile(
-                leading: Icon(Icons.account_circle),
-                title: Text('Profile'),
+                leading: Icon(Icons.location_on),
+                title: Text('Manage address'),
+                // onTap: () => Navigator.pushNamed(context,"")
               ),
-              ListTile(
-                leading: Icon(Icons.settings),
-                title: Text('Settings'),
-              ),
+              const Divider(color: Colors.grey,),
             ],
           ),
         ),
