@@ -167,32 +167,41 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              Row(
-                //2nd row starts
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Categories",
-                    style: GoogleFonts.varelaRound(
-                        fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  TextButton(
-                      onPressed: () => Navigator.pushNamed(context, "/seeall"),
-                      child: Text(
-                        "See All",
-                        style: GoogleFonts.varelaRound(
-                            color: Colors.black, fontWeight: FontWeight.bold),
-                      ))
-                ],
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 8.0,
+                ),
+                child: Row(
+                  //2nd row starts
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Categories",
+                      style: GoogleFonts.varelaRound(
+                          fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    TextButton(
+                        onPressed: () =>
+                            Navigator.pushNamed(context, "/seeall"),
+                        child: Text(
+                          "See All",
+                          style: GoogleFonts.varelaRound(
+                              color: Colors.black, fontWeight: FontWeight.bold),
+                        ))
+                  ],
+                ),
               ), //2nd row ends
               Clist(),
-              Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    "Stores Around Me",
-                    style: GoogleFonts.varelaRound(
-                        fontSize: 20, fontWeight: FontWeight.bold),
-                  )),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      "Stores Around Me",
+                      style: GoogleFonts.varelaRound(
+                          fontSize: 20, fontWeight: FontWeight.bold),
+                    )),
+              ),
               HotelList(),
             ],
           ),
