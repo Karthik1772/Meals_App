@@ -132,7 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   TextButton(
-                      onPressed: () {},
+                      onPressed: ()=>Navigator.pushNamed(context,"/seeall"),
                       child: Text(
                         "See All",
                         style: GoogleFonts.varelaRound(

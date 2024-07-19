@@ -1,6 +1,7 @@
 import 'package:delivery_app/pages/homescreen.dart';
 import 'package:delivery_app/pages/location.dart';
 import 'package:delivery_app/pages/searchpage.dart';
+import 'package:delivery_app/pages/seeall.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
@@ -12,6 +13,8 @@ class Routes {
         return MaterialPageRoute(builder: (context) => const Location());
       case '/search':
         return MaterialPageRoute(builder: (context) => const SearchPage());
+        case '/seeall':
+        return MaterialPageRoute(builder: (context) => const SeeAll());
       default:
         return MaterialPageRoute(
           builder: (context) => const HomeScreen(),
