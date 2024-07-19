@@ -130,7 +130,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: 200,
                         width: 375,
                         decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black),
                             image: DecorationImage(
                                 fit: BoxFit.fitHeight,
                                 image: NetworkImage(
@@ -144,7 +143,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: 200,
                         width: 375,
                         decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black),
                             image: DecorationImage(
                                 fit: BoxFit.fitHeight,
                                 image: NetworkImage(
@@ -158,7 +156,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: 200,
                         width: 375,
                         decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black),
                             image: DecorationImage(
                                 fit: BoxFit.fitWidth,
                                 image: NetworkImage(
