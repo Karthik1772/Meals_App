@@ -68,7 +68,10 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           actions: [
             IconButton(
-              icon: Icon(Icons.menu,size: 35,),
+              icon: Icon(
+                Icons.menu,
+                size: 35,
+              ),
               onPressed: () {
                 _scaffoldKey.currentState!.openEndDrawer();
               },
@@ -118,9 +121,54 @@ class _HomeScreenState extends State<HomeScreen> {
                 //vertical scroll
                 margin: EdgeInsets.all(10),
                 height: 200,
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black),
-                    borderRadius: BorderRadius.circular(20)),
+                width: 375,
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 200,
+                        width: 375,
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.black),
+                            image: DecorationImage(
+                                fit: BoxFit.fitHeight,
+                                image: NetworkImage(
+                                    "https://eatanceapp.com//wp-content/uploads/2021/12/restaurant-promotion-ideas.jpg")),
+                            borderRadius: BorderRadius.circular(20)),
+                      ),
+                      SizedBox(
+                        width: 50,
+                      ),
+                      Container(
+                        height: 200,
+                        width: 375,
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.black),
+                            image: DecorationImage(
+                                fit: BoxFit.fitHeight,
+                                image: NetworkImage(
+                                    "https://www.gloriafood.com/wp-content/uploads/2018/09/unique-restaurant-promotion-ideas.png")),
+                            borderRadius: BorderRadius.circular(20)),
+                      ),
+                      SizedBox(
+                        width: 50,
+                      ),
+                      Container(
+                        height: 200,
+                        width: 375,
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.black),
+                            image: DecorationImage(
+                                fit: BoxFit.fitWidth,
+                                image: NetworkImage(
+                                  "https://brennan-group.com/cdn/shop/articles/LTO_Blog.jpg?v=1596716376",
+                                )),
+                            borderRadius: BorderRadius.circular(20)),
+                      ),
+                    ],
+                  ),
+                ),
               ),
               Row(
                 //2nd row starts
@@ -132,7 +180,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   TextButton(
-                      onPressed: ()=>Navigator.pushNamed(context,"/seeall"),
+                      onPressed: () => Navigator.pushNamed(context, "/seeall"),
                       child: Text(
                         "See All",
                         style: GoogleFonts.varelaRound(
