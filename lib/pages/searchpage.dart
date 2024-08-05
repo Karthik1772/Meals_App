@@ -13,7 +13,7 @@ class SearchPage extends StatefulWidget {
 
 class _SearchPageState extends State<SearchPage> {
   final TextEditingController _searchController = TextEditingController();
-  List<Searchlist> books = availableSearchList;
+  List<Searchlist> Search = availableSearchList;
 
   @override
   Widget build(BuildContext context) {
@@ -38,8 +38,6 @@ class _SearchPageState extends State<SearchPage> {
           children: [
             TextField(
               controller: _searchController,
-              onTapOutside: (event) =>
-                  FocusManager.instance.primaryFocus!.unfocus(),
               decoration: InputDecoration(
                 prefixIcon: Icon(CupertinoIcons.search),
                 hintText: "Search for stores, items & more",
@@ -49,15 +47,17 @@ class _SearchPageState extends State<SearchPage> {
             SizedBox(height: 20),
             Expanded(
               child: ListView.builder(
-                itemCount: books.length,
+                itemCount: Search.length,
                 itemBuilder: (context, index) {
-                  final singleSearch = books[index];
+                  final singleSearch = Search[index];
                   return ListTile(
-                    leading: Image.network(
-                      singleSearch.Image,
-                      fit: BoxFit.cover,
-                      width: 50,
-                      height: 50,
+                    leading: ClipOval(
+                      child: Image.network(
+                        singleSearch.Image,
+                        fit: BoxFit.cover,
+                        width: 50,
+                        height: 50,
+                      ),
                     ),
                     title: Text(singleSearch.name),
                     onTap: () => Navigator.push(
@@ -78,10 +78,10 @@ class _SearchPageState extends State<SearchPage> {
 
   void searchBook(String query) {
     final suggestions = availableSearchList.where((book) {
-      final bookTitle = book.name.toLowerCase();
+      final SearchTitle = book.name.toLowerCase();
       final input = query.toLowerCase();
-      return bookTitle.contains(input);
+      return SearchTitle.contains(input);
     }).toList();
-    setState(() => books = suggestions);
+    setState(() => Search = suggestions);
   }
 }
