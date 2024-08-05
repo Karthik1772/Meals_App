@@ -1,4 +1,8 @@
+import 'package:delivery_app/pages/searchlist.dart';
+import 'package:delivery_app/pages/searchpages.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
@@ -8,6 +12,9 @@ class SearchPage extends StatefulWidget {
 }
 
 class _SearchPageState extends State<SearchPage> {
+  final TextEditingController _searchController = TextEditingController();
+  List<Searchlist> books = availableSearchList;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -16,9 +23,9 @@ class _SearchPageState extends State<SearchPage> {
           backgroundColor: Colors.white,
           title: Text(
             'Search',
-            style: TextStyle(
+            style: GoogleFonts.varelaRound(
               color: Colors.black,
-              fontSize: 25,
+              fontSize: 20,
             ),
           ),
           automaticallyImplyLeading: false,
@@ -29,46 +36,52 @@ class _SearchPageState extends State<SearchPage> {
         ),
         body: Column(
           children: [
-            Container(
-              width: double.infinity,
-              height: 50,
-              margin: EdgeInsets.only(left: 20, right: 20),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border.all(color: Colors.grey.shade400),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 5,
-                    blurRadius: 7,
-                    offset: Offset(0, 0), // changes position of shadow
-                  ),
-                ],
+            TextField(
+              controller: _searchController,
+              onTapOutside: (event) =>
+                  FocusManager.instance.primaryFocus!.unfocus(),
+              decoration: InputDecoration(
+                prefixIcon: Icon(CupertinoIcons.search),
+                hintText: "Search for stores, items & more",
               ),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 10.0, right: 10),
-                child: Row(
-                  //sub row 2 starts
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    GestureDetector(
-                      child: Text(
-                        "Search for Stores,Items & More",
-                        style: TextStyle(fontSize: 20),
+              onChanged: searchBook,
+            ),
+            SizedBox(height: 20),
+            Expanded(
+              child: ListView.builder(
+                itemCount: books.length,
+                itemBuilder: (context, index) {
+                  final singleSearch = books[index];
+                  return ListTile(
+                    leading: Image.network(
+                      singleSearch.Image,
+                      fit: BoxFit.cover,
+                      width: 50,
+                      height: 50,
+                    ),
+                    title: Text(singleSearch.name),
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => BookPage(book: singleSearch),
                       ),
-                      onTap: () => Navigator.pushNamed(context, '/search'),
                     ),
-                    Icon(
-                      Icons.search,
-                      size: 30,
-                    ),
-                  ],
-                ), //sub row 2 ends
+                  );
+                },
               ),
-            )
+            ),
           ],
         ),
       ),
     );
+  }
+
+  void searchBook(String query) {
+    final suggestions = availableSearchList.where((book) {
+      final bookTitle = book.name.toLowerCase();
+      final input = query.toLowerCase();
+      return bookTitle.contains(input);
+    }).toList();
+    setState(() => books = suggestions);
   }
 }
