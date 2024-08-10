@@ -1,4 +1,4 @@
-import 'package:delivery_app/pages/searchlist.dart';
+import 'package:delivery_app/models/searchlist.dart';
 import 'package:delivery_app/pages/searchpages.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

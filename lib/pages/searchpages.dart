@@ -1,8 +1,7 @@
-import 'package:delivery_app/pages/searchlist.dart';
+import 'package:delivery_app/models/searchlist.dart';
 import 'package:flutter/material.dart';
 
 class BookPage extends StatefulWidget {
- 
   const BookPage({super.key, required Searchlist book});
 
   @override
@@ -12,7 +11,6 @@ class BookPage extends StatefulWidget {
 class _BookPageState extends State<BookPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-    );
+    return Scaffold();
   }
 }

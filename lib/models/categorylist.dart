@@ -1,4 +1,4 @@
-import 'package:delivery_app/pages/models/widgetcategory.dart';
+import 'package:delivery_app/widgets/widgetcategory.dart';
 import 'package:flutter/material.dart';
 
 class Clist extends StatefulWidget {

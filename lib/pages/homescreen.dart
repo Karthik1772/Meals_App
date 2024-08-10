@@ -1,6 +1,6 @@
-import 'package:delivery_app/pages/categorylist.dart';
-import 'package:delivery_app/pages/hotel_list.dart';
-import 'package:delivery_app/pages/models/widgetlistview.dart';
+import 'package:delivery_app/models/categorylist.dart';
+import 'package:delivery_app/models/hotel_list.dart';
+import 'package:delivery_app/widgets/widgetlistview.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

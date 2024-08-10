@@ -1,4 +1,4 @@
-import 'package:delivery_app/pages/models/widgethotel.dart';
+import 'package:delivery_app/widgets/widgethotel.dart';
 import 'package:flutter/material.dart';
 
 class HotelList extends StatefulWidget {

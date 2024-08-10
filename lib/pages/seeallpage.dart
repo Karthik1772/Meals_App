@@ -1,4 +1,4 @@
-import 'package:delivery_app/pages/models/widgetcategory.dart';
+import 'package:delivery_app/widgets/widgetcategory.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -65,8 +65,9 @@ class _SeeAllState extends State<SeeAll> {
                     onPressed: () => Navigator.pushNamed(context, '/location')),
               ],
             ), //2nd row ends
-            Row(//3rd row starts
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            Row(
+              //3rd row starts
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Category(
                   title: "Meat & Egg",
