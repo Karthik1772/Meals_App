@@ -19,24 +19,24 @@ class _HotelListState extends State<HotelList> {
             hname: "Mehran Restaurant",
             category: "Food",
             loc: "Moodbidre",
-            open: "11:30AM",
-            close: "10:30PM"),
+            open: "11:30",
+            close: "10:30"),
         Hotel(
             image:
                 "https://b.zmtcdn.com/data/pictures/chains/5/18657255/0cbaa8a31809d47072aadefbeb97d5f3_o2_featured_v2.jpg",
             hname: "Hotel Sri Sagar",
             category: "Food",
             loc: "Moodbidri",
-            open: "07:00AM",
-            close: "09:15PM"),
+            open: "07:00",
+            close: "09:15"),
         Hotel(
           image:
               "https://b.zmtcdn.com/data/reviews_photos/e7d/7c6e153321162cf8cb93e03bc3cf3e7d_1605586100.jpg",
           hname: "Royal Donne Biriyani",
           category: "Food",
           loc: "Moodbidre",
-          open: "10:30AM",
-          close: "10:30PM",
+          open: "10:30",
+          close: "10:30",
         ),
         Hotel(
           image:
@@ -44,8 +44,8 @@ class _HotelListState extends State<HotelList> {
           hname: "Arabian Treat Restaurant",
           category: "Food",
           loc: "Moodbidre",
-          open: "11:00AM",
-          close: "10:30PM",
+          open: "11:00",
+          close: "10:30",
         ),
         Hotel(
             image:
@@ -61,8 +61,8 @@ class _HotelListState extends State<HotelList> {
             hname: "Charcoal's Restaurant",
             category: "Food",
             loc: "Moodbidre",
-            open: "11:00AM",
-            close: "10:30PM"),
+            open: "11:00",
+            close: "10:30"),
         Hotel(
             image:
                 "https://thumbs.dreamstime.com/b/convenient-set-fast-food-burger-french-fries-glass-cold-coke-convenient-set-fast-food-burger-271980411.jpg",
